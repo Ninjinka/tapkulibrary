@@ -42,9 +42,6 @@
 /** The coverflow image. */
 @property (strong,nonatomic) UIImage *image;
 
-/** The gradient layer the will create the reflection below the coverflow image */
-@property (strong,nonatomic) CAGradientLayer *gradientLayer;
-
 /** The height of the image. This property will help coverflow adjust views to display images with different heights. */
 @property (assign,nonatomic) CGFloat baseline; // set this property for displaying images w/ different heights
 
@@ -54,5 +51,9 @@
 
 @property (nonatomic,strong) UIImageView *reflected;
 
+@property (assign,nonatomic) BOOL showReflection;
+- (UIImage *)reflectedImage:(UIImageView *)fromImage withHeight:(NSUInteger)height;
+CGImageRef CreateGradientImage(int pixelsWide, int pixelsHigh);
+CGContextRef MyCreateBitmapContext(int pixelsWide, int pixelsHigh);
 
 @end
